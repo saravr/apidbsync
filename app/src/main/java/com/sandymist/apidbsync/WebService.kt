@@ -4,5 +4,5 @@ import retrofit2.http.GET
 
 interface Webservice {
     @GET("/")
-    suspend fun getColors(): List<String>
+    suspend fun getFruits(): List<String>
 }

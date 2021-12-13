@@ -13,12 +13,12 @@ class APIDBSyncViewModel @Inject constructor(
     private val apiDbSyncRepository: APIDBSyncRepository
 ): ViewModel() {
 
-    private val _colors = MutableStateFlow<List<String>>(listOf())
-    val colors: StateFlow<List<String>>
-        get() = _colors
+    private val _fruits = MutableStateFlow<List<String>>(listOf())
+    val fruits: StateFlow<List<String>>
+        get() = _fruits
 
     fun getColors() = viewModelScope.launch {
-        _colors.value = apiDbSyncRepository.getColors()
+        _fruits.value = apiDbSyncRepository.getFruits()
     }
 
 }

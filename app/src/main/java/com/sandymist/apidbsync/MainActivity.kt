@@ -35,10 +35,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun App(viewModel: APIDBSyncViewModel) {
     viewModel.getColors()
-    val colors = viewModel.colors.collectAsState()
+    val fruits = viewModel.fruits.collectAsState()
 
     LazyColumn {
-        items(colors.value) { color ->
+        items(fruits.value) { color ->
             Text(text = color)
         }
     }
