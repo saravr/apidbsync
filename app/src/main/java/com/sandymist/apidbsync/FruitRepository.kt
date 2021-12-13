@@ -2,7 +2,7 @@ package com.sandymist.apidbsync
 
 import javax.inject.Inject
 
-class APIDBSyncRepository @Inject constructor(
+class FruitRepository @Inject constructor(
     private val webservice: Webservice
 ) {
     suspend fun getFruits() = webservice.getFruits()

@@ -1,7 +1,6 @@
 package com.sandymist.apidbsync
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -18,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
-    private val viewModel: APIDBSyncViewModel by viewModels()
+    private val viewModel: FruitViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +32,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun App(viewModel: APIDBSyncViewModel) {
+fun App(viewModel: FruitViewModel) {
     viewModel.getColors()
     val fruits = viewModel.fruits.collectAsState()
 

@@ -9,8 +9,8 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class APIDBSyncViewModel @Inject constructor(
-    private val apiDbSyncRepository: APIDBSyncRepository
+class FruitViewModel @Inject constructor(
+    private val apiDbSyncRepository: FruitRepository
 ): ViewModel() {
 
     private val _fruits = MutableStateFlow<List<String>>(listOf())
