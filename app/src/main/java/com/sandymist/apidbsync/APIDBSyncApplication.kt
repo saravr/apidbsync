@@ -5,5 +5,5 @@ import dagger.hilt.android.HiltAndroidApp
 
 @HiltAndroidApp
 class APIDBSyncApplication: Application() {
-    private val database by lazy { FruitDatabase.getDatabase(this) }
+    //private val database by lazy { FruitDatabase.getDatabase(this) }
 }

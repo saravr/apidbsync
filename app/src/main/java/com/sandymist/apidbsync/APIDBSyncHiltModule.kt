@@ -1,8 +1,11 @@
 package com.sandymist.apidbsync
 
+import android.content.Context
+import androidx.room.Room
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,6 +16,22 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class APIDBSyncHiltModule {
+
+    @Provides
+    @Singleton
+    fun provideFruitDatabase(@ApplicationContext appContext: Context): FruitDatabase {
+        return Room.databaseBuilder(
+            appContext.applicationContext,
+            FruitDatabase::class.java,
+            "fruitsdb"
+        ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideFruitDao(fruitDatabase: FruitDatabase): FruitDao {
+        return fruitDatabase.fruitDao()
+    }
 
     @Provides
     fun provideBaseUrl() = "http://skynote.sandymist.com:7911"
