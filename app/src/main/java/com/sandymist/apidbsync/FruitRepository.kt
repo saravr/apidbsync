@@ -6,5 +6,7 @@ class FruitRepository @Inject constructor(
     private val webservice: Webservice,
     private val fruitDao: FruitDao
 ) {
-    suspend fun getFruits() = webservice.getFruits()
+    suspend fun getFruits(): List<Fruit> {
+        return webservice.getFruits()
+    }
 }

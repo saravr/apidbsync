@@ -13,8 +13,8 @@ class FruitViewModel @Inject constructor(
     private val apiDbSyncRepository: FruitRepository
 ): ViewModel() {
 
-    private val _fruits = MutableStateFlow<List<String>>(listOf())
-    val fruits: StateFlow<List<String>>
+    private val _fruits = MutableStateFlow<List<Fruit>>(listOf())
+    val fruits: StateFlow<List<Fruit>>
         get() = _fruits
 
     fun getColors() = viewModelScope.launch {
